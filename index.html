@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRCE Tech Symposium 2024</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1a237e;
+            --secondary-color: #f50057;
+            --accent-color: #00bcd4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+        }
+
+        .header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                        url('https://images.unsplash.com/photo-1497864149936-d3163f0c0f4b?ixlib=rb-1.2.1') center/cover;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .nav {
+            background-color: var(--primary-color);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+        }
+
+        .nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .department-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .department-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .department-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .event-schedule {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .countdown-item {
+            text-align: center;
+            background: var(--secondary-color);
+            color: white;
+            padding: 1rem;
+            border-radius: 5px;
+            min-width: 100px;
+        }
+
+        .registration-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-top: 0.5rem;
+        }
+
+        .btn {
+            background: var(--secondary-color);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #c51162;
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Sardar Raja College of Engineering</h1>
+        <h2>Annual Technical Symposium 2024</h2>
+        <div class="countdown" id="countdown">
+            <div class="countdown-item">
+                <span id="days">00</span>
+                <div>Days</div>
+            </div>
+            <div class="countdown-item">
+                <span id="hours">00</span>
+                <div>Hours</div>
+            </div>
+            <div class="countdown-item">
+                <span id="minutes">00</span>
+                <div>Minutes</div>
+            </div>
+            <div class="countdown-item">
+                <span id="seconds">00</span>
+                <div>Seconds</div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#register">Register</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="about" class="section">
+        <h2>About the Symposium</h2>
+        <p>Join us for the largest technical extravaganza at SRCE featuring:</p>
+        <div class="department-grid">
+            <div class="department-card">
+                <h3>ECE</h3>
+                <p>Electronics & Communication Engineering</p>
+            </div>
+            <div class="department-card">
+                <h3>EEE</h3>
+                <p>Electrical & Electronics Engineering</p>
+            </div>
+            <div class="department-card">
+                <h3>CSE</h3>
+                <p>Computer Science Engineering</p>
+            </div>
+            <div class="department-card">
+                <h3>MECH</h3>
+                <p>Mechanical Engineering</p>
+            </div>
+            <div class="department-card">
+                <h3>CIVIL</h3>
+                <p>Civil Engineering</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="events" class="section">
+        <h2>Events & Schedule</h2>
+        <div class="event-schedule">
+            <h3>Technical Events</h3>
+            <ul>
+                <li>Robo Wars (MECH)</li>
+                <li>Circuit Challenge (ECE/EEE)</li>
+                <li>Code Marathon (CSE)</li>
+                <li>Bridge Building (CIVIL)</li>
+                <!-- Add more events -->
+            </ul>
+        </div>
+    </section>
+
+    <section id="register" class="section">
+        <h2>Registration</h2>
+        <form class="registration-form">
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" required>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" required>
+            </div>
+            <div class="form-group">
+                <label>Department</label>
+                <select required>
+                    <option value="">Select Department</option>
+                    <option>ECE</option>
+                    <option>EEE</option>
+                    <option>CSE</option>
+                    <option>MECH</option>
+                    <option>CIVIL</option>
+                </select>
+            </div>
+            <button type="submit" class="btn">Register Now</button>
+        </form>
+    </section>
+
+    <footer id="contact">
+        <h3>Contact Us</h3>
+        <p>SRCE Campus, Chennai Main Road, Tamil Nadu</p>
+        <p>Email: symposium@srce.ac.in | Phone: +91 9876543210</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        // Countdown Timer
+        const countdown = () => {
+            const targetDate = new Date('2024-12-15T09:00:00').getTime();
+            
+            const timer = setInterval(() => {
+                const now = new Date().getTime();
+                const distance = targetDate - now;
+
+                document.getElementById('days').innerText = 
+                    Math.floor(distance / (1000 * 60 * 60 * 24));
+                document.getElementById('hours').innerText = 
+                    Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                document.getElementById('minutes').innerText = 
+                    Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                document.getElementById('seconds').innerText = 
+                    Math.floor((distance % (1000 * 60)) / 1000);
+
+                if (distance < 0) {
+                    clearInterval(timer);
+                    document.getElementById('countdown').innerHTML = 
+                        "<h3>Symposium Started!</h3>";
+                }
+            }, 1000);
+        };
+
+        countdown();
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
